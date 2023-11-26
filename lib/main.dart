@@ -6,7 +6,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
+      debugShowCheckedModeBanner: false,
+      home: MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
         body: CustomScrollView(
           slivers: <Widget>[
 
@@ -31,7 +40,7 @@ class MyApp extends StatelessWidget {
                     fit: BoxFit.contain,
                     height: 50,
                   ),
-                  const Text('inaklug'),
+                  const Text('inaklug', style: TextStyle(fontFamily: 'times new roman'),),
                 ],
               ),
               actions: <Widget>[
@@ -59,25 +68,25 @@ class MyApp extends StatelessWidget {
               ]),
             ),
 
-            // SLIVER LIST TULISAN KETERANGAN KAMI DAN DESKRIPSI
+            // SLIVER LIST TULISAN TENTANG KAMI DAN DESKRIPSI
             SliverList(
               delegate: SliverChildListDelegate([
                 Container(
-                  padding: EdgeInsets.only(top: 35.0),
+                  padding: EdgeInsets.only(top: 80.0),
                   child: Column(
                     children: <Widget>[
                       Container(
                         margin: EdgeInsets.only(bottom: 10.0),
                         child: Text(
                           'TENTANG KAMI',
-                          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Times New Roman'),
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.symmetric(horizontal: 10.0),
                         child: Text(
                           'INAKLUG adalah konsultan pendidikan internasional di Indonesia yang sudah memberangkatkan lebih dari 3000 mahasiswa Indonesia yang ingin berkarir di negara maju di dunia',
-                          style: TextStyle(fontSize: 16.0),
+                          style: TextStyle(fontSize: 16.0, fontFamily: 'Times New Roman'),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -91,11 +100,11 @@ class MyApp extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate([
                 Padding(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 90),
                   child: Center(
                     child: Text(
                       "LAYANAN KAMI",
-                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Times New Roman'),
                     ),
                   ),
                 ),
@@ -150,7 +159,8 @@ class MyApp extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17.0,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Times New Roman'
                           ),
                         ),
                       ),
@@ -208,7 +218,8 @@ class MyApp extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17.0,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Times New Roman'
                           ),
                         ),
                       ),
@@ -266,7 +277,8 @@ class MyApp extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17.0,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Times New Roman'
                           ),
                         ),
                       ),
@@ -324,7 +336,8 @@ class MyApp extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 17.0,
-                              fontWeight: FontWeight.bold
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Times New Roman'
                           ),
                         ),
                       ),
@@ -357,6 +370,7 @@ class MyApp extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 30.0,
                               color: Colors.white,
+                                fontFamily: 'Times New Roman'
                             ),
                           ),
                         ),
@@ -367,11 +381,12 @@ class MyApp extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 20.0,
                               color: Colors.white,
+                                fontFamily: 'Times New Roman'
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(45.0),
                           child: ElevatedButton(
                             onPressed: () { },
                             style: ButtonStyle(
@@ -386,13 +401,27 @@ class MyApp extends StatelessWidget {
                                 ),
                               ),
                             ),
-                            child: Text(
-                              "Mulai Konsultasi",
-                              style: TextStyle(
-                                color: Colors.white,
+                            child: Row(
+                              children:[
+                              Padding(
+                                padding: const EdgeInsets.only(left: 5.0),
+                                child: Text(
+                                "Mulai Konsultasi",
+                                style: TextStyle(
+                                  color: Colors.white,
+                                    fontFamily: 'Times New Roman'
+                                ),
+                            ),
+                              ),
+                            Padding(
+                              padding: const EdgeInsets.only(left:5),
+                              child: Icon(
+                                Icons.keyboard_arrow_down,
                               ),
                             ),
+                            ],
                           ),
+                        ),
                         ),
                       ],
                     ),
@@ -409,7 +438,7 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "ARTIKEL TERBARU",
-                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold, fontFamily: 'Times New Roman'),
                     ),
                   ),
                 ),
@@ -444,7 +473,7 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "belajar bahasa jerman melalui goethe institute",
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0, fontFamily: 'Times New Roman'),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -480,7 +509,7 @@ class MyApp extends StatelessWidget {
                   child: Center(
                     child: Text(
                       "jerman targetkan pariwisata pada tahun 2022 meningkat pada kuartal 1",
-                      style: TextStyle(fontSize: 18.0),
+                      style: TextStyle(fontSize: 18.0, fontFamily: 'Times New Roman'),
                       textAlign: TextAlign.center,
                     ),
                   ),
@@ -492,7 +521,7 @@ class MyApp extends StatelessWidget {
             SliverList(
               delegate: SliverChildListDelegate([
                 Padding(
-                padding: const EdgeInsets.all(65.0),
+                padding: const EdgeInsets.only(bottom: 65, left: 114, right: 114, top: 65),
                  child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
@@ -511,6 +540,7 @@ class MyApp extends StatelessWidget {
                   "ARTIKEL LAINNYA",
                   style: TextStyle(
                     color: Colors.blue,
+                      fontFamily: 'Times New Roman'
                   ),
                 ),
               ),
@@ -529,29 +559,29 @@ class MyApp extends StatelessWidget {
                         margin: EdgeInsets.only(bottom: 10.0),
                         child: Text(
                           'HUBUNGI KAMI',
-                          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+                          style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold,fontFamily: 'Times New Roman'),
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10.0),
                         child: Text(
                           'KANTOR PUSAT',
-                          style: TextStyle(fontSize: 18.0),
+                          style: TextStyle(fontSize: 18.0, fontFamily: 'Times New Roman'),
                         ),
                       ),
                       Container(
                         margin: EdgeInsets.only(top: 10.0),
                         child: Text(
                           'MULA BY GALERIA JAKARTA, CILANDAK TOWN SQUARE, LT. BASEMENT.',
-                          style: TextStyle(fontSize: 16.0),
+                          style: TextStyle(fontSize: 16.0, fontFamily: 'Times New Roman'),
                           textAlign: TextAlign.center,
                         ),
                       ),
                       Container(
-                        margin: EdgeInsets.only(top: 10.0),
+                        margin: EdgeInsets.only(top: 10.0, bottom: 75),
                         child: Text(
                           'PHONE : 0812-8134-5678',
-                          style: TextStyle(fontSize: 16.0),
+                          style: TextStyle(fontSize: 16.0, fontFamily: 'Times New Roman'),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -576,8 +606,8 @@ class MyApp extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Center(
                       child: Text(
-                        "Copyright 2023 - inaklug hak cipta dilindungi undang undang",
-                        style: TextStyle(color: Colors.white),
+                        "Copyright 2023 - inaklug Indonesia hak cipta dilindungi undang undang",
+                        style: TextStyle(color: Colors.white, fontFamily: 'Times New Roman'),
                       ),
                     ),
                   ),
@@ -649,8 +679,6 @@ class MyApp extends StatelessWidget {
             ),
           ),
         ),
-
-      ),
     );
   }
 }
